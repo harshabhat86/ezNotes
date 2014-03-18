@@ -10,3 +10,7 @@ The dream and the intentions will be shared in some time.
 tl;dr: Have a super simple, command based, cloud syncd, responsive web app for note taking.
 Must be able to handle entire app without touching mouse! like a unix terminal.
 
+
+<b>License<b>
+MIT License.
+
