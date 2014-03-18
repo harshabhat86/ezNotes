@@ -11,6 +11,6 @@ tl;dr: Have a super simple, command based, cloud syncd, responsive web app for n
 Must be able to handle entire app without touching mouse! like a unix terminal.
 
 
-<b>License<b>
+<b>License</b>
 MIT License.
 
