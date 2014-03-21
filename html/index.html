@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8">
+    <title>EZ Notes! Login</title>
+    <meta name="description" content="">
+    <meta name="author" content="Harsha Bhat">
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+  ================================================== -->
+<script src="//www.parsecdn.com/js/parse-1.2.17.min.js"></script>
+
+<link href="../css/login.css" rel="stylesheet">
+
+</head>
+<body>
+<div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+  	  Parse.FacebookUtils.init({
+  		    appId      : '249701425212021',
+  		    channelUrl : "<script src='//connect.facebook.net/en_US/all.js'/>",
+  		    status     : true, // check login status
+  		    cookie     : true, // enable cookies to allow Parse to access the session
+  		    xfbml      : true  // parse XFBML
+  		  });
+    
+    
+  };
+    
+  function loginFB(){
+	  
+	  
+	  Parse.FacebookUtils.logIn(null, {
+	        success: function(user) {
+	          if (!user.existed()) {
+	            alert("User signed up and logged in through Facebook!"+Parse.User.current());
+	            alert("Curr user:"+Parse.User.current());
+	          } else {
+	            alert("User logged in through Facebook!");
+	          }
+	        },
+	        error: function(user, error) {
+	          alert("User cancelled the Facebook login or did not fully authorize.");
+	        }
+	      });
+	  
+  }
+  
+  
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=249701425212021";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+      
+      
+    </script>
+
+
+
+    <div class="container">
+        <div class="flat-form">
+            <ul class="tabs">
+                <li>
+                    <a href="#login" class="active">Login</a>
+                </li>
+                <li>
+                    <a href="#register">Register</a>
+                </li>
+                <li>
+                    <a href="#reset">Reset Password</a>
+                </li>
+            </ul>
+            <div id="login" class="form-action show">
+                <h1>Login</h1>
+                <p>
+                    
+                    
+                    <li id="fb" onclick="loginFB();"><span class="ifacebook"><img src="../images/facebook.png"></span><a href="#" class="afacebook">sign in with facebook</a></li>
+                    <br>
+                    
+                    	
+                    	<div id="customBtn" class="customGPlusSignIn">
+                    		<li id="gp">
+      							<span class="igoogleplus">
+                    				<img src="../images/googleplus.png">
+                    			</span>	
+      							<a href="#" class="agoogleplus">sign in with gmail/ google</a>
+      						</li>
+    					</div>
+                 </p>
+                <form>
+                    <ul>
+                        <li>
+                            <input type="text" placeholder="Username" />
+                        </li>
+                        <li>
+                            <input type="password" placeholder="Password" />
+                        </li>
+                        <li>
+                            <input type="submit" value="Login" class="button" />
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <!--/#login.form-action-->
+            <div id="register" class="form-action hide">
+                <h1>Register</h1>
+                <p>
+                    You should totally sign up for our super awesome service.
+                    It's what all the cool kids are doing nowadays.
+                </p>
+                <form>
+                    <ul>
+                        <li>
+                            <input type="text" placeholder="Username" />
+                        </li>
+                        <li>
+                            <input type="password" placeholder="Password" />
+                        </li>
+                        <li>
+                            <input type="submit" value="Sign Up" class="button" />
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <!--/#register.form-action-->
+            <div id="reset" class="form-action hide">
+                <h1>Reset Password</h1>
+                <p>
+                    To reset your password enter your email and your birthday
+                    and we'll send you a link to reset your password.
+                </p>
+                <form>
+                    <ul>
+                        <li>
+                            <input type="text" placeholder="Email" />
+                        </li>
+                        <li>
+                            <input type="text" placeholder="Birthday" />
+                        </li>
+                        <li>
+                            <input type="submit" value="Send" class="button" />
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <!--/#register.form-action-->
+        </div>
+    </div>
+    
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script');
+    po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/client:plusone.js?onload=render';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+
+  function render() {
+    gapi.signin.render('customBtn', {
+      'callback': 'signinCallback',
+      'clientid': '473709550484-4ffr5gjjgep345s1rklgjkqrtdftfkrs.apps.googleusercontent.com',
+      'cookiepolicy': 'single_host_origin',
+      'requestvisibleactions': 'http://schemas.google.com/AddActivity',
+      'scope': 'https://www.googleapis.com/auth/plus.login'
+    });
+  }
+  </script>
+    <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="../js/login.js"></script>
+    
+</body>
+</html>
+
+

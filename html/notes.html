@@ -2,9 +2,11 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Sticky notes using CSS3 and Google Fonts (Step 5)</title>
+<title>Simple, Easy to use, Sticky note app</title>
 <link href="//fonts.googleapis.com/css?family=Gafata:400" rel="stylesheet" type="text/css"> 
 
+<script src="//www.parsecdn.com/js/parse-1.2.17.min.js"></script>
+<script src="../js/notes.js"></script>
 
 <!-- Loading Flat UI -->
 <link href="../css/flat-ui.css" rel="stylesheet">
@@ -14,41 +16,45 @@
 
 </head>
 <body onload="document.getElementById('enterNotes').focus();">
-
-<!--  <div id="fb-root"></div>
+<!-- 
+ <div id="fb-root"></div>
     <script>
-      window.fbAsyncInit = function() {
-    	  Parse.FacebookUtils.init({
-    		    appId      : '249701425212021', // Facebook App ID
-    		    channelUrl : '//localhost:8080/nobsnotes/html/notes.html', // Channel File
-    		    status     : true, // check login status
-    		    cookie     : true, // enable cookies to allow Parse to access the session
-    		    xfbml      : true  // parse XFBML
-    		  });
-        
-        
-    	  Parse.FacebookUtils.logIn(null, {
-              success: function(user) {
-                if (!user.existed()) {
-                  alert("User signed up and logged in through Facebook!");
-                } else {
-                  alert("User logged in through Facebook!");
-                }
-              },
-              error: function(user, error) {
-                alert("User cancelled the Facebook login or did not fully authorize.");
-              }
-            });
-    	 
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/all.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+    window.fbAsyncInit = function() {
+  	  Parse.FacebookUtils.init({
+  		    appId      : '249701425212021',
+  		    channelUrl : "<script src='//connect.facebook.net/en_US/all.js'/>",
+  		    status     : true, // check login status
+  		    cookie     : true, // enable cookies to allow Parse to access the session
+  		    xfbml      : true  // parse XFBML
+  		  });
+    
+    
+  	Parse.FacebookUtils.logIn(null, {
+        success: function(user) {
+          if (!user.existed()) {
+            alert("User signed up and logged in through Facebook!"+Parse.User.current());
+            alert("Curr user:"+Parse.User.current());
+          } else {
+            alert("User logged in through Facebook!");
+          }
+        },
+        error: function(user, error) {
+          alert("User cancelled the Facebook login or did not fully authorize.");
+        }
+      });
+    
+    
+  };
+      
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=249701425212021";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+      
+      
     </script>
  -->
 
@@ -130,8 +136,6 @@
   </div>
 
 
-<script src="//www.parsecdn.com/js/parse-1.2.17.min.js"></script>
-<script src="../js/notes.js"></script>
   
 </body>
 </html>
