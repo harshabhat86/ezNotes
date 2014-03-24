@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:100);
+@import url(http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css);
 *{
   margin:0;
   padding:0;
@@ -110,17 +112,15 @@ li a{overflow: auto;}
 	color: white;
 	color: #ECF0F1;
 	background-color: #2980B9;
-	
 	border-radius:6px;
 	padding: 2px;
+	margin:1px;
 }
 
 .hashtag:HOVER{
-	color: white;
-	background-color: #3498DB;
-	border-radius:6px;
-	padding: 2px;
+	
 	cursor: pointer;
+	
 }
 
 #stickyContainer{
@@ -149,6 +149,106 @@ li a{overflow: auto;}
 
 #NoNotesDiv
 {
-	color:red;
+	color:white;
 	text-align: center;
 }
+
+
+
+.flat-form {
+  /* background: #67809F; */
+  background: black;
+  width: 100%;
+  height: 8%;
+  position: absolute;
+  font-family: 'Roboto';
+  left:0;
+  top:0;
+}
+
+
+
+img{border:0; margin: 0; padding: 0;}
+#social-links ul li span.ifacebook,
+		#social-links ul li span.itwitter,
+		#social-links ul li span.igoogleplus {
+			display: inline-table;
+			width: 41px;
+			text-align: center;
+		}
+		span.ifacebook { background: #354f88; padding: 7px 14px 6px 14px; cursor: pointer;}
+		span.itwitter { background: #40a2d1; padding: 10px 0 10px 0;  cursor: pointer;}
+		span.igoogleplus { background: #ce3e26; padding: 7px 10px 7px 10px;  cursor: pointer;}
+		
+		a.afacebook,
+		a.atwitter,
+		a.agoogleplus {
+			display: inline-table;
+			color: #ffffff;
+			text-decoration: none;
+			margin: 0;
+			width: 250px;
+			text-align: center;
+		}
+		a.afacebook { background: none; padding: 10px 0 10px 0; }
+		a.atwitter { background: none; padding: 10px 0 10px 0; }
+		a.agoogleplus { background: none; padding: 10px 0 10px 0; }
+	
+		a.afacebook:hover { background: none; }
+		a.atwitter:hover { background: none; }
+		a.agoogleplus:hover { background: none; }
+		
+		li {list-style: none;}
+		
+		#fb{
+		background: #3b5998;
+		cursor: pointer;
+		}
+		
+		#fb:HOVER{
+		background: #354f88;
+		cursor: pointer;
+		}
+		#gp{
+		background: #de4c34;
+		cursor: pointer;
+		}
+		#gp:HOVER{
+		background: #ce3e26;
+		cursor: pointer;
+		}
+		
+		
+		/*
+		For the Google + sign in button
+		*/
+		 #customBtn {
+      display: inline-block;
+      background: #dd4b39;
+      color: white;
+      width: 360px;
+      border-radius: 5px;
+      white-space: nowrap;
+    }
+    #customBtn:hover {
+      background: #e74b37;
+      cursor: hand;
+    }
+    span.label {
+      font-weight: bold;
+    }
+   
+   #enterNotes{
+   resize:none;
+   }
+   
+   #helpText{
+   padding-top:10px;
+   color:red;
+   text-align: center;
+   
+   }
+   
+   .stickyNote{
+    cursor:pointer;
+   }

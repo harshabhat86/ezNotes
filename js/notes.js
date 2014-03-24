@@ -6,7 +6,7 @@ Parse.initialize("kL1NFNINEGFag94CWEM6LmL7xRxPzVvAPNhAO6nZ",
 /*
  * If space bar is clicked, we take you to enter the notes.
  */
-document.onkeypress = function(e) {
+document.onkeyup = function(e) {
 	var keycode = e.keyCode ? e.keyCode : e.charCode;
 	if (keycode == 32 && document.activeElement.id != 'enterNotes') {
 
@@ -24,7 +24,17 @@ var removeElement = function(id) {
 
 var NoteObject = Parse.Object.extend("NoteObject");
 
-var user = "harsha";
+var loggedInUser = window.location.href.split('?loggedInUser=')[1];
+
+var user = loggedInUser;
+
+
+if (user=='')
+	{
+	 window.location = 'http://harshabhat86.github.io/no_bs_notes/html/index.html';
+	}
+
+
 var count = 0;
 
 var ulElem = 'stickies';
@@ -168,11 +178,12 @@ aNote.prototype.init = function(id, text, title, owner, tags) {
 aNote.prototype.toHTML = function() {
 
 	li = document.createElement('li');
-
+	
 	hashTagLink = highlightHashTag(this.text);
+	hashTagLink = hashTagLink.replace(/\r\n|\r|\n/g,"<br />")
 	var str = "<a id='"
 			+ this.id
-			+ "' >"
+			+ "' class='stickyNote' >"
 			+ "<img id='"
 			+ this.id
 			+ "_edit' class='icon edit' src='../images/pencil.png' onclick='editNote(\""
@@ -181,7 +192,9 @@ aNote.prototype.toHTML = function() {
 			+ "<img id='"
 			+ this.id
 			+ "_delete' class='icon delete' src='../images/cross.png' onclick='deleteNote(\""
-			+ this.id + "\")'/>" + "<p>" + hashTagLink + "</p> " + "</a>";
+			+ this.id + "\")'/>" + "<p title='click to edit' onclick='editNote(\""
+			+ this.id
+			+ "\")'>" + hashTagLink + "</p> " + "</a>";
 	li.innerHTML = str;
 	li.id = this.id + "_li";
 
@@ -355,15 +368,30 @@ function getHashTags(str) {
 
 }
 
+
+
 function keyDownTextField(e) {
-
+	
+	var elem = document.getElementById('enterNotes');
+	var tempNoteId = elem.getAttribute('data-noteid');
+	var tempNoteEditing = elem.getAttribute('data-noteediting');
+	
+	if(elem.value=='')
+		{
+			document.getElementById('helpText').innerHTML = '';
+		}
+	else
+		{
+			document.getElementById('helpText').innerHTML = 'Press Ctrl+Enter (Ctrl+Return) to save a note!';
+		}
 	var keycode = e.keyCode ? e.keyCode : e.charCode;
-	if (keycode == 13) {
-		var elem = document.getElementById('enterNotes');
-		var tempNoteId = elem.getAttribute('data-noteid');
-		var tempNoteEditing = elem.getAttribute('data-noteediting');
-
+	
+	if (e.ctrlKey==true && keycode == 13) {
+		
+		
+			
 		var text = elem.value;
+		
 		var title = elem.value.substr(0, 4) + '...';
 		var allTags = getHashTags(text);
 		var owner = user;
