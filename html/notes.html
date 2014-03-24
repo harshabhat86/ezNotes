@@ -58,16 +58,35 @@
     </script>
  -->
 
-  <div id="welcome">
-  
-  
+  <div id="toolbar" class='flat-form'>
+  <div id="helpText"></div>
+  	
+              <!--       
+                    
+                    <li id="fb" onclick="loginFB();"><span class="ifacebook"><img src="../images/facebook.png"></span><a href="#" class="afacebook">sign in with facebook</a></li>
+                    
+                    
+                    	
+                    	<div id="customBtn" class="customGPlusSignIn">
+                    		<li id="gp">
+      							<span class="igoogleplus">
+                    				<img src="../images/googleplus.png">
+                    			</span>	
+      							<a href="#" class="agoogleplus">sign in with gmail/ google</a>
+      						</li>
+    					</div>
+                 
+   -->
   </div>
   
   <div id="enterText">
   
 		<div class="form-group" id="divEnterNotes">
-	        	<input type="text" value="" placeholder="Start Typing The Note Here..." data-noteediting='false' data-noteid='' class="form-control" id="enterNotes" onkeyup='keyDownTextField(event);'>
+	        	<!-- <input type="text" cols='60' rows='8' value="" placeholder="Start Typing The Note Here..." data-noteediting='false' data-noteid='' class="form-control" id="enterNotes" onkeyup='keyDownTextField(event);'> -->
+	        	<textarea  value="" placeholder="Type Your Note Here..." data-noteediting='false' data-noteid='' class="form-control" id="enterNotes" onkeyup='keyDownTextField(event);'>
+	        	</textarea>
         </div>
+        
   </div>
     
   <div id = "stickyContainer">

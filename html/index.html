@@ -41,14 +41,18 @@
 	  Parse.FacebookUtils.logIn(null, {
 	        success: function(user) {
 	          if (!user.existed()) {
-	            alert("User signed up and logged in through Facebook!"+Parse.User.current());
-	            alert("Curr user:"+Parse.User.current());
+	        	  document.getElementById('fb').setAttribute('style', 'display: none');
+	        	  window.location = 'http://harshabhat86.github.io/no_bs_notes/html/notes.html?loggedInUser='+Parse.User.current().attributes.username;
+	        	  
 	          } else {
-	            alert("User logged in through Facebook!");
+	        	  document.getElementById('fb').setAttribute('style', 'display: none');
+	        	  window.location = 'http://harshabhat86.github.io/no_bs_notes/html/notes.html?loggedInUser='+Parse.User.current().attributes.username;
+	            
 	          }
 	        },
 	        error: function(user, error) {
 	          alert("User cancelled the Facebook login or did not fully authorize.");
+	          return;
 	        }
 	      });
 	  
@@ -66,23 +70,23 @@
       
     </script>
 
-
+<div id="authResult"></div>
 
     <div class="container">
         <div class="flat-form">
             <ul class="tabs">
                 <li>
-                    <a href="#login" class="active">Login</a>
+                    <a href="#login" class="active" id="Login">Login</a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#register">Register</a>
                 </li>
                 <li>
                     <a href="#reset">Reset Password</a>
-                </li>
+                </li> -->
             </ul>
             <div id="login" class="form-action show">
-                <h1>Login</h1>
+                
                 <p>
                     
                     
@@ -95,26 +99,14 @@
       							<span class="igoogleplus">
                     				<img src="../images/googleplus.png">
                     			</span>	
-      							<a href="#" class="agoogleplus">sign in with gmail/ google</a>
+      							<a href="#" class="agoogleplus">sign in with google</a>
       						</li>
     					</div>
                  </p>
-                <form>
-                    <ul>
-                        <li>
-                            <input type="text" placeholder="Username" />
-                        </li>
-                        <li>
-                            <input type="password" placeholder="Password" />
-                        </li>
-                        <li>
-                            <input type="submit" value="Login" class="button" />
-                        </li>
-                    </ul>
-                </form>
+                
             </div>
             <!--/#login.form-action-->
-            <div id="register" class="form-action hide">
+            <!-- <div id="register" class="form-action hide">
                 <h1>Register</h1>
                 <p>
                     You should totally sign up for our super awesome service.
@@ -134,7 +126,7 @@
                     </ul>
                 </form>
             </div>
-            <!--/#register.form-action-->
+            /#register.form-action
             <div id="reset" class="form-action hide">
                 <h1>Reset Password</h1>
                 <p>
@@ -154,7 +146,7 @@
                         </li>
                     </ul>
                 </form>
-            </div>
+            </div> -->
             <!--/#register.form-action-->
         </div>
     </div>
@@ -185,4 +177,8 @@
 </body>
 </html>
 
+<!-- 
+http://bit.ly/1gfZBmg
 
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/1gfZBmg" data-text="I recommend this simple note taking app built by @harshabhat86 using @ParseIt" data-size="large" data-related="parse">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> -->
