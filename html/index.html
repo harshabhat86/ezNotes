@@ -25,7 +25,7 @@
     <script>
     window.fbAsyncInit = function() {
   	  Parse.FacebookUtils.init({
-  		    appId      : '249701425212021',
+  		    appId      : '<Facebook APPID>',
   		    channelUrl : "<script src='//connect.facebook.net/en_US/all.js'/>",
   		    status     : true, // check login status
   		    cookie     : true, // enable cookies to allow Parse to access the session
@@ -164,7 +164,7 @@
   function render() {
     gapi.signin.render('customBtn', {
       'callback': 'signinCallback',
-      'clientid': '473709550484-4ffr5gjjgep345s1rklgjkqrtdftfkrs.apps.googleusercontent.com',
+      'clientid': '<Google Client ID>',
       'cookiepolicy': 'single_host_origin',
       'requestvisibleactions': 'http://schemas.google.com/AddActivity',
       'scope': 'https://www.googleapis.com/auth/plus.login'
