@@ -1,5 +1,5 @@
-Parse.initialize("kL1NFNINEGFag94CWEM6LmL7xRxPzVvAPNhAO6nZ",
-	"xlKdh66kYBpTJ33FneuyDkuzlayFQ2HDGfMHgeD1");
+Parse.initialize("<APPID>",
+	"<JavaScript Key>");
 
 $( document ).ready(function() {
 	
