@@ -3,8 +3,8 @@ ezNotes
 
 A simple to use, cloud based, note making app where performance and simplicity come first, then comes everything else.
 
-Access it <a href="harshabhat86.github.io">here</a>.
-URL is <a href="harshabhat86.github.io">harshabhat86.github.io</a>.
+Access it <a href="http://harshabhat86.github.io">here</a>.
+URL is <a href="http://harshabhat86.github.io">harshabhat86.github.io</a>.
 
 
 This is not even version 1 hence calling it version 0.1. 
