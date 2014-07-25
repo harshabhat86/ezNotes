@@ -12,5 +12,6 @@ Must be able to handle entire app without touching mouse! like a unix terminal.
 
 
 <b>License</b>
+
 MIT License.
 
