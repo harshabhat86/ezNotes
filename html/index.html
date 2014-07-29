@@ -5,10 +5,10 @@
     <!-- Basic Page Needs
   ================================================== -->
     <meta charset="utf-8">
-    <title>EZ Notes! Login</title>
+    <title>Ez Notes| Welcome</title>
     <meta name="description" content="">
     <meta name="author" content="Harsha Bhat">
-
+<link href='http://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
     <!-- Mobile Specific Metas
   ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,16 +16,17 @@
     <!-- CSS
   ================================================== -->
 <script src="//www.parsecdn.com/js/parse-1.2.17.min.js"></script>
-
 <link href="../css/login.css" rel="stylesheet">
+
 
 </head>
 <body>
+
 <div id="fb-root"></div>
     <script>
     window.fbAsyncInit = function() {
   	  Parse.FacebookUtils.init({
-  		    appId      : '<Facebook APPID>',
+  		    appId      : '249701425212021',
   		    channelUrl : "<script src='//connect.facebook.net/en_US/all.js'/>",
   		    status     : true, // check login status
   		    cookie     : true, // enable cookies to allow Parse to access the session
@@ -41,12 +42,16 @@
 	  Parse.FacebookUtils.logIn(null, {
 	        success: function(user) {
 	          if (!user.existed()) {
+	        	  window.username = Parse.User.current().attributes.username;
 	        	  document.getElementById('fb').setAttribute('style', 'display: none');
-	        	  window.location = 'http://harshabhat86.github.io/no_bs_notes/html/notes.html?loggedInUser='+Parse.User.current().attributes.username;
+	        	  getUser();
+	        	  //window.location = 'http://harshabhat86.github.io/no_bs_notes/html/notes.html?loggedInUser='+Parse.User.current().attributes.username;
 	        	  
 	          } else {
+	        	  window.username = Parse.User.current().attributes.username;
 	        	  document.getElementById('fb').setAttribute('style', 'display: none');
-	        	  window.location = 'http://harshabhat86.github.io/no_bs_notes/html/notes.html?loggedInUser='+Parse.User.current().attributes.username;
+	        	  getUser();
+	        	  //window.location = 'http://harshabhat86.github.io/no_bs_notes/html/notes.html?loggedInUser='+Parse.User.current().attributes.username;
 	            
 	          }
 	        },
@@ -69,22 +74,19 @@
       
       
     </script>
+<div id="head">
 
-<div id="authResult"></div>
+<div class="wrapper-squares">
+  <div class="square square1 square-brand square-pulse square-center">EZ Notes...</div>
+</div>
+</div>
+<div id="main">
 
-    <div class="container">
+
+
+    <div class="container" id="container">
         <div class="flat-form">
-            <ul class="tabs">
-                <li>
-                    <a href="#login" class="active" id="Login">Login</a>
-                </li>
-                <!-- <li>
-                    <a href="#register">Register</a>
-                </li>
-                <li>
-                    <a href="#reset">Reset Password</a>
-                </li> -->
-            </ul>
+            
             <div id="login" class="form-action show">
                 
                 <p>
@@ -94,7 +96,7 @@
                     <br>
                     
                     	
-                    	<div id="customBtn" class="customGPlusSignIn">
+                    	<div id="customBtn" class="customGPlusSignIn" onclick='setGlobalFlag();'>
                     		<li id="gp">
       							<span class="igoogleplus">
                     				<img src="../images/googleplus.png">
@@ -105,52 +107,61 @@
                  </p>
                 
             </div>
-            <!--/#login.form-action-->
-            <!-- <div id="register" class="form-action hide">
-                <h1>Register</h1>
-                <p>
-                    You should totally sign up for our super awesome service.
-                    It's what all the cool kids are doing nowadays.
-                </p>
-                <form>
-                    <ul>
-                        <li>
-                            <input type="text" placeholder="Username" />
-                        </li>
-                        <li>
-                            <input type="password" placeholder="Password" />
-                        </li>
-                        <li>
-                            <input type="submit" value="Sign Up" class="button" />
-                        </li>
-                    </ul>
-                </form>
-            </div>
-            /#register.form-action
-            <div id="reset" class="form-action hide">
-                <h1>Reset Password</h1>
-                <p>
-                    To reset your password enter your email and your birthday
-                    and we'll send you a link to reset your password.
-                </p>
-                <form>
-                    <ul>
-                        <li>
-                            <input type="text" placeholder="Email" />
-                        </li>
-                        <li>
-                            <input type="text" placeholder="Birthday" />
-                        </li>
-                        <li>
-                            <input type="submit" value="Send" class="button" />
-                        </li>
-                    </ul>
-                </form>
-            </div> -->
-            <!--/#register.form-action-->
+            
         </div>
+        
+        
     </div>
     
+      <div id="selfLogin">
+        
+        	<div id="loginSelf" title="Just give email and password, Login or Sign up will be decided automatically.">
+
+			<p>Or Just Signup / Login here</p>
+			<br>
+
+				<span class="fontawesome-user"></span><input type="text" placeholder="Email" id="usernm" > <!-- JS because of IE support; better: placeholder="Username" -->
+				<span class="fontawesome-lock"></span><input type="password" placeholder="Password" id="passwd"> <!-- JS because of IE support; better: placeholder="Password" -->
+				<input type="submit" value="Signup / Login" id="btnSelfLogin" onClick='loginSignup();'>
+
+		
+
+			</div> <!-- end login -->
+        
+        
+        
+        </div>
+    
+    <div id="introText" >
+        
+        <span id="header">Welcome to EZ Notes. The easy to use note app.</span> 
+        <br><br>
+        Create, Edit and Delete notes in the simplest possible way.
+        <br><br>
+        No Formatting, no coloring options, just built for performance.
+        <br><br>
+        The app supports <span class="hashtag">#HashTags</span> and the notes can be searched and arranged by hashtags.
+        <br><br>
+        Login using FB or Google and that's it! you are all set. Go ahead and create notes.
+        
+        <br><br>
+        The notes are saved in cloud hence all your devices are in sync.. always!
+        <br><br>
+        Create a note in your laptop, access it on the go on your mobile device. Edit it, delete it.
+        All on cloud.
+        <br><br>  
+        So.. Go ahead!! Create some notes.... 
+        <br><br><br>
+        </div>
+        
+      
+        <div id="footer">
+        <a href="https://twitter.com/harshabhat86" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @harshabhat86</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://harshabhat86.github.io/no_bs_notes/html/index.html" data-text="I recommend this simple note taking app built by @harshabhat86 using @ParseIt" data-size="large" data-related="parse">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        
+        </div>
+   </div> 
     <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
   <script type="text/javascript">
   (function() {
@@ -164,7 +175,7 @@
   function render() {
     gapi.signin.render('customBtn', {
       'callback': 'signinCallback',
-      'clientid': '<Google Client ID>',
+      'clientid': '473709550484-4ffr5gjjgep345s1rklgjkqrtdftfkrs.apps.googleusercontent.com',
       'cookiepolicy': 'single_host_origin',
       'requestvisibleactions': 'http://schemas.google.com/AddActivity',
       'scope': 'https://www.googleapis.com/auth/plus.login'

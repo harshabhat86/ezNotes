@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Simple, Easy to use, Sticky note app</title>
+<title>Quick Sticky Notes!</title>
 <link href="//fonts.googleapis.com/css?family=Gafata:400" rel="stylesheet" type="text/css"> 
 
 <script src="//www.parsecdn.com/js/parse-1.2.17.min.js"></script>
@@ -15,68 +15,14 @@
 
 
 </head>
-<body onload="document.getElementById('enterNotes').focus();">
-<!-- 
- <div id="fb-root"></div>
-    <script>
-    window.fbAsyncInit = function() {
-  	  Parse.FacebookUtils.init({
-  		    appId      : '<APPID>',
-  		    channelUrl : "<script src='//connect.facebook.net/en_US/all.js'/>",
-  		    status     : true, // check login status
-  		    cookie     : true, // enable cookies to allow Parse to access the session
-  		    xfbml      : true  // parse XFBML
-  		  });
-    
-    
-  	Parse.FacebookUtils.logIn(null, {
-        success: function(user) {
-          if (!user.existed()) {
-            alert("User signed up and logged in through Facebook!"+Parse.User.current());
-            alert("Curr user:"+Parse.User.current());
-          } else {
-            alert("User logged in through Facebook!");
-          }
-        },
-        error: function(user, error) {
-          alert("User cancelled the Facebook login or did not fully authorize.");
-        }
-      });
-    
-    
-  };
-      
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=<APPID>";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-      
-      
-    </script>
- -->
+<body onload="document.getElementById('enterNotes').focus(); setHelpText('Start Typing !! BTW, did we tell you, we support #hashtags ??');">
 
+
+<div id="logout" onclick="logout();">Logout</div>
   <div id="toolbar" class='flat-form'>
   <div id="helpText"></div>
   	
-              <!--       
-                    
-                    <li id="fb" onclick="loginFB();"><span class="ifacebook"><img src="../images/facebook.png"></span><a href="#" class="afacebook">sign in with facebook</a></li>
-                    
-                    
-                    	
-                    	<div id="customBtn" class="customGPlusSignIn">
-                    		<li id="gp">
-      							<span class="igoogleplus">
-                    				<img src="../images/googleplus.png">
-                    			</span>	
-      							<a href="#" class="agoogleplus">sign in with gmail/ google</a>
-      						</li>
-    					</div>
-                 
-   -->
+             
   </div>
   
   <div id="enterText">
@@ -92,68 +38,13 @@
   <div id = "stickyContainer">
     	
   <ul id="stickies">
-    
-  
-  <!--   
-    <li>
-      <a href="#">
-        <h2>Title #1</h2>
-        <p>Text Content #1</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <h2>Title #2</h2>
-        <p>Text Content #2</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <h2>Title #3</h2>
-        <p>Text Content #3</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <h2>Title #4</h2>
-        <p>Text Content #4</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <h2>Title #5</h2>
-        <p>Text Content #5</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <h2>Title #6</h2>
-        <p>Text Content #6</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <h2>Title #2</h2>
-        <p>Text Content #2</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <h2>Title #7</h2>
-        <p>Text Content #7</p>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <h2>Title #8</h2>
-        <p>Text Content #8</p>
-      </a>
-    </li>
-     -->
-    
+      
   </ul>
   </div>
 
+<div id='allTagsContainer'>
+
+</div>
 
   
 </body>
