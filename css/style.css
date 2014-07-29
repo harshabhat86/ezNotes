@@ -246,9 +246,47 @@ img{border:0; margin: 0; padding: 0;}
    padding-top:10px;
    color:red;
    text-align: center;
-   
+   z-index: 2;
    }
    
    .stickyNote{
     cursor:pointer;
    }
+   #logout{
+   float:right;
+   cursor:pointer;
+   padding-right: 10px;
+   color:white;
+   position:absolute;
+   left:90%;
+   top:3%;
+   z-index: 2;
+   }
+   
+   #allTagsContainer{
+   position: absolute;
+   top:10%;
+   left:87%;
+   width:150px;
+   z-index: 3;
+   color: white;
+   background: #16a085;
+   padding:10px;
+   border-radius:5px;
+   max-height: 100%
+   }
+   
+   #helpicon{
+   float:right;
+   cursor:pointer;
+   padding-right: 10px;
+   height:20px;
+   width:20px;
+   padding-right: 3px;
+   position:absolute;
+   left:94%;
+   top:3%;
+   z-index: 2;
+   
+   }
+  
